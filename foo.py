@@ -2,7 +2,7 @@
 def anagrammiko(sana1, sana2): return sorted(sana1) == sorted(sana2)
 
 print anagrammiko('mikko', 'komik')
-print anagrammiko('pannu', 'panu')
+print anagrammiko('jannu', 'janu')
 
 def fibo(n):
  def fibo_in(n):

@@ -1,3 +1,5 @@
+Olen vihreä omena
+
 1.1 Gis:iä tarvitsevat mm. kaupunkisuunnittelijat, biologit, luonnonkatastrofien tutkijat, geologi-insinöörit, kaivosinsinöörit, metsätieteilijät ja vesitieteilijät.
 spatial-data - paikkaan liittyvä data. paikka-aika -ilmiöt - el nino
 
