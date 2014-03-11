@@ -1,0 +1,75 @@
+1.1 Gis:iä tarvitsevat mm. kaupunkisuunnittelijat, biologit, luonnonkatastrofien tutkijat, geologi-insinöörit, kaivosinsinöörit, metsätieteilijät ja vesitieteilijät.
+spatial-data - paikkaan liittyvä data. paikka-aika -ilmiöt - el nino
+
+Gis tarkoittaa paikkatietojärjestelmää, tai geoinformatiikkaa tieteenä. Kirjan määritelmä gisille on: 
+1. Datan keräys ja valmistelu
+2. Datan säilytys ja muotoilu
+3. Datan muokkaus ja analysointi
+4. Datan esitystapa, esim. kartat
+Datalla tarkoitetaan maantieteelliseen paikkaan liittyvää dataa.
+
+tyypillinen gis-funktio on interpoloida arvo jollekin paikalle, josta ei ole valmiiksi mitattua dataa.
+
+Data on maantieteeseen liittyvää, jos sille on määritettävissä koordinaatit jollakin järjestelmällä.
+
+On olemassa paikkatietojärjestelmiä ja paikkatietosovelluksia, joilla voi tehdä pienempiä, tiettyjä asioita.
+
+Datalla tarkoitetaan tietokoneella käsiteltävää tietoa, jolla on paikkaan liittyviä arvoja, kuten x ja y -koordinaatit.
+
+Informaatiolla/tiedolla tarkoitetaan dataa, jota ihminen on tulkinnut.
+
+Metadatalla tarkoitetaan tietoa datan tarkkuudesta, datan muodosta ja mahdollisista virheistä ynnä muusta dataan liittyvästä tiedosta.
+
+Dataan liittyviä virheitä syntyy, kun yhdistellään dataa eri lähteistä, yksinkertaistetaan asioita. Myös dataa kerätessä tieto voi olla epävarmaa. Myös monet gis-analyysit aiheuttavat virheitä.
+
+Gis:iä käytetään eniten päätösten tekemisen helpottamiseen. Gis:llä mallinnetaan maailmaa - yleisemmin karttana. Tietokannat ovat tärkeä mallinnustapa, sillä niille voi tehdä monimutkaisiakin analyyseja.
+
+Kartat ja tietokannat ovat staattisia eli ne kuvaavat yhtä tiettyä tilaa. Niillä on vaikea mallintaa jatkuvasti muuttuvia asioita. Dynaamiset mallit ovat tarkoitettu muutosten simuloimiseen.
+
+Dynaaminen malli voi olla esimerkiksi sarja kuvia eri aikoina. Tai animaatio jostakin ilmiöstä.
+
+Geotietokantajärjestemä muistuttaa Gis:iä, mutta gis on monimutkaisempi: sillä voi tehdä paikka-analyyseja, interpolointeja ja erilaisia esitystapoja tiedolle.
+
+Geotietokantaan halutaan tallettaa tietoa piste, viiva, alue tai kuva -pohjalle. Tietoa voidaan jakaa ajallisesti tai temaattisesti.
+
+2. Gisiä käytetään mallintamaan todellista maailmaa, jotta sitä olisi helpompi ymmärtää.
+
+Maantieteelliseksi ilmiöksi kutsutaan jotain jonka: a) voi nimetä tai kuvailla b) voi liittää maantieteelliseen sijaintiin c) voi yhdistää aikaan jolloin se tapahtuu/on tapahtunut
+
+Nykyiset geoinformatiikkajärjestelmät eivät sisällä kovinkaan paljon automatisoitua käsittelyä aikaan liittyvälle datalle.
+
+Kirjassa Maantieteellisiä ilmiötiä kutsutaan *kentiksi* ja ihmisten tekememiä ilmiöitä *objekteiksi*, mutta kirjassa myös varoitetaan siitä, että tähän on paljon poikkeuksia. vmp.
+
+Kenttää voidaan ajatella matemaattisena funktiona, jonka parametreja on x ja y -koordinaatit. Kentät voivat olla diskreettejä tai jatkuvia. Jatkuvat kentät ovat esimerkiksi lämpötila ja ilmanpaine. Diskreetit kentät jakaavat tutkimusalueen toisensa poissulkeviin alueisiin, joiden parametreilla on sama arvo samalla alueella.
+
+Diskreetit kentät ovat helposti muutettavissa polygoneiksi, kun taas jatkuvia kenttiä kuvataan rastereina. Kenttien arvot ovat jaettavissa ainakin neljäntyyppisiin arvoihin:
+1. Nimeen liittyvät arvot, eli arvot joille ei voida tehdä automaattista tietojenkäsittelyä. Esimerkiksi paikkojen nimet. 
+2. Järjestykseen liittyvät arvot ovat arvoja joita pystytään laittamaan järjestykseen, mutta joille ei voida tehdä mitään muita operaatioita.
+3. Arvoväliin liittyvät arvot sallivat yksinkertaisia laskentoja, kuten yhteen- ja vähennyslaskun, mutta eivät kerto- tai jakolaskuja, esimerkiksi celsius-lämpötila.
+4. Suhteeliset arvot sallivat kaikenlaisen aritmeettisen laskennan ja niillä on luonnollinen nolla-arvo.
+
+Kun maantieteellinen ilmiö ei esiinny kaikkialla tutkimusalueella (vaan siellä täällä) se muistuttaa ennemminkin objektia. Objekteilla on yleensä nimi ja jonkinlainen yhdistelmä näistä: sijainti, muoto, koko ja orientaatio.
+
+Raja voidaan määritellä kähäräksi (crisp) tai sumea (fuzzy). Kähärät rajat ovat yleensä ihmisten tekemiä käsitteitä. Kirjassa selitetään raja -käsite tosi epäselvästi.
+
+Tietokoneella näitä kaikkia lasketaan erilaisilla funktioilla. Interpolointi on yleisin, jonka toimintaperiaate on *spatiaalinen automaattinen vastaavuussuhde*. joka tarkoittaa sitä, että lähempänä toisiaan olevat sijainnit ovat myös arvoiltaan toisiaan lähellä. Tietokoneelle kaikki rajat ovat "crisp" ja esimerkiksi kuvista etsitään mahdollisia rajoja, joita automaattigeneroidaan.
+
+Tesselaatio - eli tapa esittää tietoa kaksiulotteisessa avaruudessa on yleisin tapa esittää rasteriaineistoa. Kolme yleisintä tesselaatiota on neliösolut, hexasolut ja kolmiosolut. Tesselaatiossa solut ovat aina keskenään samankokoisia. On myös olemassa epäsäännöllisiä tesselaatioita, joissa solujen koko ja muoto vaihtelee.
+
+Rasteri on kokoelma säännöllisiä soluja, joiden kentillä on arvoja. Arvot esitetään koko solun arvoina. Se alue, jonka yksi rasterisolu esittää, määrittää rasterin resoluution. Rasterin täsmällinen sijainti määritellään gis:ssä joko rasterin keskipisteeseen tai vasempaan alanurkkaan.
+
+Vektorit tallettavat täsmällisesti maantieteellisen tiedon siitä ilmiöstä jota ne esittävät. 
+
+Pistemuotoinen data sisältää koordinaattiparin tai kordinaattitripletin. Pistedata sopii parhaiten objekteille joilla ei ole kokoa tai muotoa tai sillä ei ole väliä, joka taas riippuu kontekstista. datan attribuutteina voi olla mitä vain objektiin liittyvää.
+
+Viivaesitystä käytetään yhdensuuntaisiin objekteihin, kuten teihin ja rautateihin, jokiin ja voimalinjoihin. Joissain tapauksissa viivaesitystä käytetään myös säilyttämään tietoa viivan leveydestä. Viivadataa säilötään yleensä koordinaattilistana joiden välien oletetaan olevan suoria. Suurin osa gis-ohjelmista ei tue kaarevia välejä.
+
+Alue-esitys esitetään syklisinä alueen rajaviivoina. Samaa rajaviivaa ei kuitenkaan talleteta kahdesti, jos se jakaa kaksi aluetta. Alueiden rajat mallinnetaan siis osina alueen rajoista, jos alueella on naapureita. Alueet tallennetaan yhtenä tauluna, jossa sijaitsee tieto siitä mikä alue on minkäkin alueen naapuri ja mitkä pisteet yhdistyvät. Toisessa taulussa on viivojen tarkat koordinaatit.
+
+Topologialla tarkoitetaan paikkaan liittyviä ominaisuuksia, jotka pysyvät samoina vaikka paikan muut ominaisuudet muuttuisivat. Esimerkiksi naapuruussuhteet, tai rajat.
+
+Maantieteellisen alueen matemaattinen määritelmä: Alue on kolmisuuntainen, eli sille on määriteltävissä jokaiselle pisteelle x,y ja z. Aluelle voidaan aina laskea kahden pisteen etäisyys. Alue on topologinen siten että jokaiselle pisteelle on samat naapurit. Sisäpuoli ja rajat ovat alueen ominaisuuksia, jotka säilyvät muuttumattomina topologisesti.
+
+Materiaalin mukaan erilaisia simplexejä on helpointa käsitellä. Piste vastaa 0-simplexiä, viiva 1-simplexiä, alue 2-simplexiä ja kolmiulotteinen avaruus tedraedreinä. Kun näitä kaikkia yhdistellään, saadaan täydellinen avaruus.
+
+Sellaisen topologisen alueen, jolla on rajat ja sisusta ja toisen samanlaisen välillä voi olla kahdeksan erilaista suhdetta: Epäyhdistyminen, tapaaminen, yhtäpitävyys, sisältäminen, suojaaminen, suojaus, sisällyttäminen ja päällekkäys.
