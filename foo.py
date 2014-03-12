@@ -11,6 +11,6 @@ def fibo(n):
   return nyk, ed+nyk
  return fibo_in(n)[1]
 
-print fibo(47)
+print fibo(6)
  
 
