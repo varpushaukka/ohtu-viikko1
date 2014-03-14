@@ -88,12 +88,14 @@ public class VarastoTest {
         varasto.lisaaVarastoon(rajanylitys);
         assertEquals(varasto.getTilavuus(), varasto.getSaldo(), vertailuTarkkuus);
     }
+    
     @Test
     public void eiVoiOttaaNegatiivisiaMääriä() {
         double saldo = varasto.getSaldo();
         varasto.otaVarastosta(-1);
         assertEquals(saldo, varasto.getSaldo(), vertailuTarkkuus);
     } 
+    
     @Test
     public void eiVoiLaittaaNegatiiviaMääriä() {
         double saldo = varasto.getSaldo();
@@ -106,6 +108,7 @@ public class VarastoTest {
         varasto.lisaaVarastoon(varasto.getTilavuus());
         assertEquals(0.0, varasto.paljonkoMahtuu(), vertailuTarkkuus);
     }
+    
     @Test
     public void paljonkoMahtuuToimiiKunVarastoOnTyhjä() {
         varasto.otaVarastosta(varasto.getTilavuus());
