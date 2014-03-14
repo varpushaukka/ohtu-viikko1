@@ -52,7 +52,7 @@ public class VarastoTest {
 
         double saatuMaara = varasto.otaVarastosta(2);
 
-        assertEquals(3, saatuMaara, vertailuTarkkuus);
+        assertEquals(2, saatuMaara, vertailuTarkkuus);
     }
 
     @Test
